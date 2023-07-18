@@ -5,6 +5,7 @@
  * Return: Always 0
  */
 
+/* Function to print the lowercase alphabet followed by a new line*/
 void print_alphabet(void)
 {
 char ch;
