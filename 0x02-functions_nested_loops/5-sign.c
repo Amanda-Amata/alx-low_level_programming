@@ -3,7 +3,7 @@
 /**
  * print_sign - prints the sign of a number
  * @n: is character being checked
- * Return:1 if n is greater than zero, 0 if n is zero, and -1 if n is less than zero
+ * Return:1 if n is greater than 0,0 if n is 0, and -1 if n is less than 0
  */
 int print_sign(int n)
 {
@@ -22,4 +22,4 @@ int print_sign(int n)
 		_putchar(48);
 		return (0);
 	}
-}	
+}
