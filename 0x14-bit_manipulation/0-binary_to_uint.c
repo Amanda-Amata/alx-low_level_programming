@@ -15,22 +15,21 @@ unsigned int binary_to_uint(const char *b)
 	size_t length;
 	int a;
 
-	if (!b)
+if (!b)
+	return (0);
+
+length = strlen(b);
+
+for (a = length - 1; a >= 0; a--)
+{
+	if (b[a] != '0' && b[a] != '1')
 		return (0);
-
-	length = strlen(b);
-
-	for (a = length - 1; a >= 0; a--)
-	{
-	       if (b[a] != '0' && b[a] != '1')
-		       return (0);
-	}
-	
-	for (a = length - 1; a >= 0; a--)
-	{
-		if (b[a] == '1')
-			i += n;
-		n *= 2;
-	}
-	return (i);
+}
+for (a = length - 1; a >= 0; a--)
+{
+	if (b[a] == '1')
+		i += n;
+	n *= 2;
+}
+return (i);
 }
