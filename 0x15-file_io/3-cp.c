@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	error_file(from, to, argv);
 	nchars = 1024;
-	while (nchars == 1024)
+	while ((nchars = read(from, buffer, sizeof(buffer))) > 0)
 	{
 		nchars = read(from, buffer, 1024);
 		if (nchars == -1)
@@ -55,6 +55,10 @@ int main(int argc, char *argv[])
 		nwr = write(to, buffer, 1024);
 			if (nwr == -1)
 				error_file(0, -1, argv);
+	}
+	if (nchars == -1)
+	{
+		error_file(-1, 0, argv);
 	}
 
 	err_close = close(from);
