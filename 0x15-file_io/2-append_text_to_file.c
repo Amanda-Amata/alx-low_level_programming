@@ -23,7 +23,6 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	file_txt = open(filename, O_WRONLY | O_APPEND);
 	rwr = write(file_txt, text_content, num_letters);
-	
 	if (file_txt == -1 || rwr == -1)
 		return (-1);
 	close(file_txt);
